@@ -46,8 +46,10 @@ class textstatistics:
                 for value in sentences:
                         if self.lexicon_count(value) < 4:
                                 count = count + 1
-
-                return len(sentences) - count
+                res = len(sentences) - count
+                if res == 0:
+                    res = 1
+                return res
 
         def avg_sentence_length(self, text):
                 lc = self.lexicon_count(text)
